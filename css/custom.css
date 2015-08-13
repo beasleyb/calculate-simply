@@ -1,0 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Raleway:100,300,500);
+body {
+  background-color: #3E4651;
+  color: #FDFCF7; }
+
+.header {
+  margin: 5em 0; }
+
+.footer {
+  margin: 2em 0; }
+
+.row.calc {
+  display: flex; }
+
+.rounded {
+  border-radius: 6px;
+  overflow: hidden; }
+
+.base, .value, .operator, #screen {
+  font-size: 1.25em;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  padding: 20px 20px;
+  width: 25%;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.value {
+  background-color: #323a44; }
+  .value:active {
+    background-color: #384454; }
+
+.operator {
+  background-color: #60646D; }
+  .operator:active {
+    background-color: #51555e; }
+
+#zero {
+  width: 50%; }
+
+#equals {
+  background-color: #65878F;
+  width: 75%; }
+  #equals:active {
+    background-color: #73a4b7; }
+
+#clear {
+  background-color: #E76B6B;
+  font-size: 1.5em; }
+  #clear:active {
+    background-color: #D24D57; }
+
+#screen {
+  text-align: right;
+  width: 75%;
+  background-color: #FDFCF7;
+  color: #485359;
+  font-size: 1.5em;
+  font-weight: 700; }
+
+/*# sourceMappingURL=custom.css.map */
