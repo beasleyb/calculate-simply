@@ -1,20 +1,23 @@
 $(function(){
 
 	// Global Variables
-	var $operator	    = $('.operator'),
-		$value 			= $('.value'),
-		$screen		    = $('#screen'),
-		$clear			= $('#clear'),
-		$delete			= $('#delete');
+	var $Operator	    = $('.operator'),
+		$Value 			= $('.value'),
+		$Screen		    = $('#screen'),
+		$Clear			= $('#clear'),
+		$Delete			= $('#delete'),
+		$Equals			= $('#equals'),
+		Equation;
 
 	// Operator click
-	$operator.on('click', function(e){
+	$Operator.on('click', function(e){
 		e.preventDefault();
-		console.log('operator '+$(this).text()+' clicked');
+		console.log('operator '+$(this).attr("id")+' clicked');
 	});
     
-    $value.on('click', function(e){
+    // Value click
+    $Value.on('click', function(e){
 		e.preventDefault();
-		console.log('value '+$(this).text()+' clicked');
+		console.log('value '+$(this).attr("id")+' clicked');
 	});
 });
