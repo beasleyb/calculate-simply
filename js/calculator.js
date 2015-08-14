@@ -30,7 +30,17 @@ $(function(){
 		}
 
 		// If evaluate button pressed, evaluate equation
+		else if (OperatorID == 'evaluate') {
+			// Replace 'x' with '*'
+			Equation = Equation.replace(/x/g, '*');
 
+			// Only evaluate if an equation exists
+			if (Equation) {
+				var Answer = eval(Equation);
+				$Screen.text(Answer);
+				Equation = $Screen.text();
+			}
+		}
 
 		// If any other operation, append to equation
 		else {
@@ -44,6 +54,11 @@ $(function(){
 			// Do not allow any other operation if blank
 			else if (!Equation) {
 				// Do nothing
+			}
+
+			else {
+				Equation += Operation;
+				$Screen.text(Equation);
 			}
 		}
 	});
