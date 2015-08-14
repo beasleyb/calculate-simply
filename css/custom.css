@@ -41,10 +41,10 @@ body {
 #zero {
   width: 50%; }
 
-#equals {
+#evaluate {
   background-color: #65878F;
   width: 75%; }
-  #equals:active {
+  #evaluate:active {
     background-color: #73a4b7; }
 
 #clear {
