@@ -1,6 +1,10 @@
 // TODO:
 // - Limit Equation size
-// - One decimal point per number
+//		- Based on viewport size
+// - Exception handling for delete button
+// - Eval result checking
+//		- If number has a decimal, do not add another
+//		- Limit returned answer size
 // - Add keyboard functionality?
 
 $(function(){
@@ -10,6 +14,7 @@ $(function(){
 		$Value 			= $('.value'),
 		$Screen		    = $('#screen'),
 		Operations		= ['/', 'x', '-', '+'],
+		DecimalAdded	= false,
 		Equation		= '';
 
 	// Operator click (keep order)
@@ -25,6 +30,7 @@ $(function(){
 		if (OperatorID == 'clear') {
 			Equation = '';
 			$Screen.empty();
+			DecimalAdded = false;
 		}
 
 		// If delete button pressed, remove last index
@@ -64,15 +70,16 @@ $(function(){
 
 			else {
 
-				// If last character is an oeprator, do not append
+				// If last character is an operator, do not append
 				if ($.inArray(Equation.slice(-1), Operations) != -1) {
 					// Do nothing
 				}
 				
-				// Else, append to equation and update screen
+				// Else, update equation, screen, and DecimalAdded
 				else {
 					Equation += Operation;
 					$Screen.text(Equation);
+					DecimalAdded = false;
 				}
 			}
 		}
@@ -84,18 +91,34 @@ $(function(){
 		console.log('value '+$(this).attr('id')+' clicked');
 
 		// TODO:
-		// - Only one decimal point per number
 		// - Add keyboard functionality?
-		var ValueID = $(this).attr('id');
+		var ValueID 	= $(this).attr('id'),
+			ThisValue	= $(this).text();
 
 		// If no equation, do not start with a decimal point
 		if (!Equation && ValueID == 'point') {
 			// Do Nothing
 		}
 
+		// Check to see if decimal point has already been added
+		else if (ValueID == 'point') {
+
+			// If there is a decimal in the number, do not add
+			if (DecimalAdded) {
+				// Do nothing
+			}
+
+			// Else, update equation, screen, and DecimalAdded
+			else {
+				Equation += ThisValue;
+				$Screen.text(Equation);
+				DecimalAdded = true;
+			}
+		}
+
 		// Update equation, append to screen
 		else {
-			Equation += $(this).text();
+			Equation += ThisValue;
 			$Screen.text(Equation);
 		}
 	});
