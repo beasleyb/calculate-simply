@@ -10,6 +10,10 @@ body {
   margin: 2em 0; }
 
 .row.calc {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex; }
 
 .rounded {
