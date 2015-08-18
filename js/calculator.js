@@ -10,12 +10,12 @@
 $(function(){
 
 	// Global Variables
-	var $Operator	    = $('.operator'),
-		$Value 			= $('.value'),
-		$Screen		    = $('#screen'),
-		Operations		= ['/', 'x', '-', '+'],
+	var	$Operator	= $('.operator'),
+		$Value		= $('.value'),
+		$Screen		= $('#screen'),
+		Operations	= ['/', 'x', '-', '+'],
 		DecimalAdded	= false,
-		Equation		= '';
+		Equation	= '';
 
 	// Operator click (keep order)
 	$Operator.on('click', function(e){
@@ -23,7 +23,7 @@ $(function(){
 		console.log('operator '+$(this).attr('id')+' clicked');
 
 		// Get ID and operation of button
-		var OperatorID 	= $(this).attr('id'),
+		var	OperatorID	= $(this).attr('id'),
 			Operation	= $(this).text();
 
 		// If clear button pressed, remove equation from screen
@@ -92,7 +92,7 @@ $(function(){
 
 		// TODO:
 		// - Add keyboard functionality?
-		var ValueID 	= $(this).attr('id'),
+		var	ValueID		= $(this).attr('id'),
 			ThisValue	= $(this).text();
 
 		// If no equation, do not start with a decimal point
