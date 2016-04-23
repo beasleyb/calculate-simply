@@ -5,7 +5,7 @@
 // - Eval result checking
 //		- If number has a decimal, do not add another
 //		- Limit returned answer size
-// - Add keyboard functionality?
+// - Add keyboard functionality
 
 $(function(){
 
