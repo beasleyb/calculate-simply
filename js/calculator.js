@@ -9,7 +9,6 @@
 
 $(function(){
 
-	// Global Variables
 	var	$Operator	= $('.operator'),
 		$Value		= $('.value'),
 		$Screen		= $('#screen'),
